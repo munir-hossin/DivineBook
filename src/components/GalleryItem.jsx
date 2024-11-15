@@ -1,14 +1,29 @@
 import { TiStar } from "react-icons/ti";
-import { getImage } from "../utils/getImage";
+// import { GetImages } from "../utils/GetImages";
+import { GetImages } from "../utils/GetImages";
 import { GoHeart, GoHeartFill } from "react-icons/go";
+
+     
+
+
 
 
 function GalleryItem({ onOpen, gallery, onAdd, handleHeartClick, selectItems }) {
+
     return (
         <div className="w-[300px] mx-auto sm:w-full border hover:shadow-2xl p-3 rounded flex flex-col justify-between">
             <div onClick={() => onOpen(true)}>
                 <div className="relative group">
-                    <img src={getImage(`../assets/book_images/${gallery.image}`)} alt="Book Cover" className="w-full object-cover rounded" />
+
+                {/* <img
+                className="w-full h-auto"
+                src={GetImages(`../assets/images/${gallery.image}`)}
+                alt={gallery.name}
+              /> */}
+            
+                <img src={GetImages(`../assets/book_images/${gallery.image}`)} alt="Book Cover" className="w-full object-cover rounded" />
+                {/* <img src={`../assets/book_images/${gallery.image}`} alt="Book Cover" className="w-full object-cover rounded" /> */}
+
                     <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded"></div>
                 </div>
                 <div>
@@ -22,7 +37,7 @@ function GalleryItem({ onOpen, gallery, onAdd, handleHeartClick, selectItems }) 
                 </div>
             </div>
             <div className="flex mt-2">
-                <div className="px-7 py-2 dark:border-none dark:text-black dark:bg-green-400 border rounded hover:shadow-xl text-red-400 font-medium">
+                <div className="w-full text-center  mr-2   py-2 dark:border-none dark:text-black dark:bg-green-400 border rounded hover:shadow-xl text-red-400 font-medium">
                     <button onClick={() => onAdd(gallery)}>${gallery.price} | Add to cart</button>
                 </div>
 
@@ -40,6 +55,11 @@ function GalleryItem({ onOpen, gallery, onAdd, handleHeartClick, selectItems }) 
 }
 
 export default GalleryItem;
+
+
+
+
+
 
 
 

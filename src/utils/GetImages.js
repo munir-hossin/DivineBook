@@ -1,12 +1,22 @@
 
+function GetImages(uel) {
+    return new URL(uel, import.meta.url).href;
+  }
+  export { GetImages };
+  
 
-function getImage(name) {
-    return new URL(name, import.meta.url).href;
+
+
+
+// function GetImages(name) {
+//     return new URL(name, import.meta.url).href;
  
- }
+//  }
  
+//  export {GetImages} 
  
- export {getImage} 
+
+
  
  //  getImage();
 
