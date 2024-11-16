@@ -1,6 +1,7 @@
+import { FaChevronRight } from "react-icons/fa6";
 
 
-function RightSidebar(props) {
+function RightSidebar({handleSortByName, sortByPrice, sortByRating, isRightModalOpen, toggleModal }) {
     return (
         <div>
              <aside className="w-1/6 p-4 hidden md:block">

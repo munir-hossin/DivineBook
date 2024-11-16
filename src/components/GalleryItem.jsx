@@ -11,7 +11,8 @@ import { GoHeart, GoHeartFill } from "react-icons/go";
 function GalleryItem({ onOpen, gallery, onAdd, handleHeartClick, selectItems }) {
 
     return (
-        <div className="w-[300px] mx-auto sm:w-full border hover:shadow-2xl p-3 rounded flex flex-col justify-between">
+        
+        <div className="w-[300px] cursor-pointer mx-auto sm:w-full border hover:shadow-2xl p-3 rounded flex flex-col justify-between">
             <div onClick={() => onOpen(true)}>
                 <div className="relative group">
 
