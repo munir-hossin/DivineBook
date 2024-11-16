@@ -1,9 +1,12 @@
 import { TiStar } from "react-icons/ti";
 import { GoHeart, GoHeartFill } from "react-icons/go";
 
-function GalleryItem({ onOpen, gallery, onAdd, handleHeartClick, selectItems, cartItems=[] }) {
+function GalleryItem({ onOpen, gallery, onAdd, handleHeartClick, selectItems, cartItems }) {
     // Check if the item is already in the cart
     const isAlreadyAdded = cartItems.some((item) => item.id === gallery.id);
+
+    // Debugging logs to check cartItems and gallery.id
+
 
     return (
         <div className="w-[300px] cursor-pointer mx-auto sm:w-full border hover:shadow-2xl p-3 rounded flex flex-col justify-between">
@@ -45,20 +48,6 @@ function GalleryItem({ onOpen, gallery, onAdd, handleHeartClick, selectItems, ca
 }
 
 export default GalleryItem;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

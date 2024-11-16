@@ -18,7 +18,7 @@ function LeftSideModal({setIsSearchModalOpen, handleSearchChange, sortByTrending
                             <div className="w-3/4 sm:w-1/2 md:w-1/3 bg-white dark:bg-gray-900 p-4 h-full relative">
                                 {/* Close Button */}
                                 <button className="text-2xl mb-4 absolute top-9 right-4" onClick={toggleLeftModal}>
-                                    ✕ {/* Replace with a different icon if preferred */}
+                                    ✕ 
                                 </button>
 
                                 {/* Modal Content (same as the sidebar) */}

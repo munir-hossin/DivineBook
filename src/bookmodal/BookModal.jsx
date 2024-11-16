@@ -7,6 +7,7 @@ function BookModal({ isBookModalOpen, selectedBook, handleAddToCart, selectItems
                 <div className="fixed inset-0 bg-gray-700 bg-opacity-25 flex items-center justify-center z-50">
                     <dialog onClick={(e) => e.stopPropagation()} id="my_modal_4" className="modal " open>
                         <div className=" w-8/12 max-w-5xl ">
+                        {/* <div className=" w-8/12 max-w-5xl "> */}
                             <div className="flex flex-col md:flex-row text-gray-300 bg-[#1e293b] rounded-2xl items-center">
                                 {/* Book Image */}
                                 <div className="order-1 lg:order-12 pt-5 md:p-0">
