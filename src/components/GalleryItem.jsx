@@ -2,10 +2,10 @@ import { TiStar } from "react-icons/ti";
 import { GoHeart, GoHeartFill } from "react-icons/go";
 
 function GalleryItem({ onOpen, gallery, onAdd, handleHeartClick, selectItems, cartItems }) {
-    // Check if the item is already in the cart
+
     const isAlreadyAdded = cartItems.some((item) => item.id === gallery.id);
 
-    // Debugging logs to check cartItems and gallery.id
+   
 
 
     return (

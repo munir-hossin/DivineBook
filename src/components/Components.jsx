@@ -121,13 +121,13 @@ function Components() {
                     isModalOpen={isModalOpen}
                     cartItems={cartItems}
                     GetImages={images}
-                    // images={images}
                     closeModal={closeModal}
                     handleDecrement={handleDecrement}
                     handleIncrement={handleIncrement}
                     handleDelete={handleDelete}
                     totalPrice={totalPrice}
                     totalItems={totalItems}
+                 
                 />
                 <div className=" h-screen flex ">
                     <LeftSidebar
@@ -171,7 +171,7 @@ function Components() {
                                 setIsBookModalOpen={setIsBookModalOpen}
                             />
 
-                            <BookModal isBookModalOpen={isBookModalOpen} selectedBook={selectedBook} handleAddToCart={handleAddToCart} selectItems={selectItems} setIsBookModalOpen={setIsBookModalOpen} handleHeartClick={handleHeartClick} />
+                            <BookModal isBookModalOpen={isBookModalOpen} selectedBook={selectedBook} handleAddToCart={handleAddToCart} selectItems={selectItems} setIsBookModalOpen={setIsBookModalOpen} handleHeartClick={handleHeartClick}  cartItems={cartItems} />
 
                             {sortedBooks.map((gallery) => (
                                 <GalleryItem
