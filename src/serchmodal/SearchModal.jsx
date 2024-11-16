@@ -47,7 +47,8 @@ function SearchModal({isSearchModalOpen, setIsSearchModalOpen, handleSearchChang
                                     setIsBookModalOpen(true);
                                 }}
                             >
-                                <img className="w-12 h-16 mr-3" src={GetImages(`../assets/book_images/${book.image}`)} alt={book.name} />
+                                {/* <img src={book.image} alt="img" /> */}
+                                <img className="w-12 h-16 mr-3" src={book.image} alt={book.name} />
                                 <div className="flex-grow">
                                     <p>{book.name}</p>
                                     <p className="text-sm text-gray-400">Price: {book.price} TK</p>

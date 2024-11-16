@@ -3,7 +3,7 @@ import { useReducer, useState } from "react";
 import GalleryItem from "./GalleryItem"
 import Footer from "./Footer";
 import { initialBookData } from "../data/initialBookData";
-import { GetImages } from "../utils/GetImages";
+// import { GetImages } from "../utils/GetImages";
 import RightSidebar from "../sidebar/RightSidebar";
 import LeftSidebar from "../sidebar/LeftSidebar";
 import LeftSideModal from "../sidebar/LeftSideModal";

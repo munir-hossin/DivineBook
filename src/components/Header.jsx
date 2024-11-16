@@ -124,7 +124,7 @@ function Header({ openModal, isModalOpen, cartItems, closeModal, handleDecrement
 
                         {/* <!-- Right Order Summary Section --> */}
                         <div>
-                            <div className="sm:bg-[#8C8C8C4D] w-full md:w-[200px] mx-auto md:mx-7 text-center rounded-sm mt-4 md:mt-11">
+                            <div className="sm:bg-[#8C8C8C4D] bg-gray-800 w-full md:w-[200px] mx-auto md:mx-7 text-center rounded-sm mt-4 md:mt-11">
                                 <h3 className="font-bold text-lg mb-4 text-gray-300 pt-3 border-b pb-5">Order Summary</h3>
                                 <div className="text-gray-300 mb-2 mx-6">
                                     <p className="flex justify-between">
