@@ -12,6 +12,7 @@ function GalleryItem({ onOpen, gallery, onAdd, handleHeartClick, selectItems }) 
 
     return (
         
+        
         <div className="w-[300px] cursor-pointer mx-auto sm:w-full border hover:shadow-2xl p-3 rounded flex flex-col justify-between">
             <div onClick={() => onOpen(true)}>
                 <div className="relative group">
@@ -22,7 +23,15 @@ function GalleryItem({ onOpen, gallery, onAdd, handleHeartClick, selectItems }) 
                 alt={gallery.name}
               /> */}
             
-                <img src={GetImages(`../assets/book_images/${gallery.image}`)} alt="Book Cover" className="w-full object-cover rounded" />
+                
+                
+            <img src={gallery.image} alt="Book Cover" className="w-full object-cover rounded" />
+            
+            
+            
+            {/* <img src={GetImages(`../assets/book_images/${gallery.image}`)} alt="Book Cover" className="w-full object-cover rounded" /> */}
+                
+                {/* <img src={gallery.image} alt={[]} /> */}
                 {/* <img src={`../assets/book_images/${gallery.image}`} alt="Book Cover" className="w-full object-cover rounded" /> */}
 
                     <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded"></div>

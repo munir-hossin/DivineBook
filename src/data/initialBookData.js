@@ -1,16 +1,26 @@
-
+import image1 from "../assets/book_images/1.jpg"
+import image2 from "../assets/book_images/2.jpg"
+import image3 from "../assets/book_images/3.jpg"
+import image4 from "../assets/book_images/4.jpg"
+import image5 from "../assets/book_images/5.jpg"
+import image6 from "../assets/book_images/6.jpg"
+import image7 from "../assets/book_images/7.jpg"
+import image8 from "../assets/book_images/8.jpg"
+import image9 from "../assets/book_images/9.jpg"
+import image10 from "../assets/book_images/10.jpg"
+import image11 from "../assets/book_images/11.jpg"
+import image12 from "../assets/book_images/12.jpg"
 
 
 function initialBookData() {
                               
     return [
     
-    
       
         {
             "id": "01",
             "name": "The Blacked Hunter",
-            "image": "1.jpg",
+            image: image1,
             "rating": 3,
             "price": 150,
             "author": "John Doe",
@@ -20,7 +30,7 @@ function initialBookData() {
         {
             "id": "02",
             "name": "Trecrcok Hengack",
-            "image": "2.jpg",
+            image: image2,
             "rating": 4,
             "price": 190,
             "author": "Jane Smith",
@@ -30,7 +40,7 @@ function initialBookData() {
         {
             "id": "03",
             "name": "Resntin Laur Goook",
-            "image": "3.jpg",
+            image: image3,
             "rating": 5,
             "price": 130,
             "author": "Alice Johnson",
