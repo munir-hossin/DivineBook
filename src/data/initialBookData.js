@@ -15,6 +15,7 @@ import image12 from "../assets/book_images/12.jpg"
 function initialBookData() {
                               
     return [
+  
     
       
         {
@@ -50,7 +51,7 @@ function initialBookData() {
         {
             "id": "04",
             "name": "Lever Lenatti Face",
-            "image": "4.jpg",
+            image: image4,
             "rating": 2,
             "price": 160,
             "author": "Robert Brown",
@@ -60,7 +61,7 @@ function initialBookData() {
         {
             "id": "05",
             "name": "Prenlter Prestion Pssquik",
-            "image": "5.jpg",
+            image: image5,
             "rating": 3,
             "price": 175,
             "author": "Emily Davis",
@@ -70,7 +71,7 @@ function initialBookData() {
         {
             "id": "06",
             "name": "Slopjnnr Sunze",
-            "image": "6.jpg",
+            image: image6,
             "rating": 4,
             "price": 125,
             "author": "Michael Wilson",
@@ -80,7 +81,7 @@ function initialBookData() {
         {
             "id": "07",
             "name": "Woodlands Nursing Home",
-            "image": "7.jpg",
+            image: image7,
             "rating": 5,
             "price": 185,
             "author": "Sarah Martinez",
@@ -90,7 +91,7 @@ function initialBookData() {
         {
             "id": "08",
             "name": "The Big Deal",
-            "image": "8.jpg",
+            image: image8,
             "rating": 2,
             "price": 155,
             "author": "David Taylor",
@@ -100,7 +101,7 @@ function initialBookData() {
         {
             "id": "09",
             "name": "The Crow Fold",
-            "image": "9.jpg",
+            image: image9,
             "rating": 3,
             "price": 145,
             "author": "Sophia Anderson",
@@ -110,7 +111,7 @@ function initialBookData() {
         {
             "id": "10",
             "name": "The Lion The Witch Wardrobe",
-            "image": "10.jpg",
+            image: image10,
             "rating": 4,
             "price": 140,
             "author": "Chris Thomas",
@@ -120,7 +121,7 @@ function initialBookData() {
         {
             "id": "11",
             "name": "Alone a True Story",
-            "image": "11.jpg",
+            image: image11,
             "rating": 5,
             "price": 180,
             "author": "Karen White",
@@ -130,7 +131,7 @@ function initialBookData() {
         {
             "id": "12",
             "name": "When I Feel Alone",
-            "image": "12.jpg",
+            image: image12,
             "rating": 2,
             "price": 135,
             "author": "Jason Harris",

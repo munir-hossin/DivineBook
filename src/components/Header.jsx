@@ -5,7 +5,11 @@ import { MdDarkMode } from "react-icons/md";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 
-function Header({ openModal, isModalOpen, cartItems, GetImages, closeModal, handleDecrement, handleIncrement, handleDelete, totalItems, totalPrice}) {
+function Header({ openModal, isModalOpen, cartItems, GetImages, closeModal, handleDecrement, handleIncrement, handleDelete, totalItems, totalPrice, }) {
+
+   
+  
+    
 
      // Check local storage and set the theme on initial load
      const [theme, setTheme] = useState(localStorage.getItem("themeMode") || "light");
@@ -81,38 +85,42 @@ function Header({ openModal, isModalOpen, cartItems, GetImages, closeModal, hand
                                                         </thead>
                                                         {/* <!-- Row 1 --> */}
                                                         <tbody>
-                                                            {cartItems.map((item) => (
-                                                                <tr key={item.id} className="border-t border-gray-600">
-                                                                    <td className="flex items-center py-4">
-                                                                        <img src={GetImages(`../assets/book_images/${item.image}`)} alt={item.name} className="h-14 mr-2" />
-                                                                        <div>
-                                                                            <p className="font-medium">{item.name}</p>
-                                                                            <p className="text-gray-400 text-sm">{item.author}</p>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td className="py-4">${item.price}</td>
-                                                                    <td className="py-4">
-                                                                        <div className="flex items-center bg-gray-700 mx-7 px-auto rounded-3xl">
-                                                                            <button onClick={() => handleDecrement(item.id)} className="px-2 rounded">
-                                                                                -
-                                                                            </button>
+    {cartItems.map((item) => (
+        <tr key={item.id} className="border-t border-gray-600">
+            <td className="flex items-center py-4">
+                {/* Set up the image dynamically */}
+                <img
+                    src={item.image}
+                    alt={item.name}
+                    className="h-14 mr-2"
+                />
+                <div>
+                    <p className="font-medium">{item.name}</p>
+                    <p className="text-gray-400 text-sm">{item.author}</p>
+                </div>
+            </td>
+            <td className="py-4">${item.price}</td>
+            <td className="py-4">
+                <div className="flex items-center bg-gray-700 mx-7 px-auto rounded-3xl">
+                    <button onClick={() => handleDecrement(item.id)} className="px-2 rounded">
+                        -
+                    </button>
+                    <span className="px-4">{item.quantity}</span>
+                    <button onClick={() => handleIncrement(item.id)} className="px-2 rounded">
+                        +
+                    </button>
+                </div>
+            </td>
+            <td className="py-4">${item.price * item.quantity}</td>
+            <td className="py-4">
+                <button onClick={() => handleDelete(item.id)} className="text-red-500">
+                    🗑️
+                </button>
+            </td>
+        </tr>
+    ))}
+</tbody>
 
-                                                                            <span className="px-4">{item.quantity}</span>
-
-                                                                            <button onClick={() => handleIncrement(item.id)} className="px-2  rounded">
-                                                                                +
-                                                                            </button>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td className="py-4">${item.price * item.quantity}</td>
-                                                                    <td className="py-4">
-                                                                        <button onClick={() => handleDelete(item.id)} className="text-red-500">
-                                                                            🗑️
-                                                                        </button>
-                                                                    </td>
-                                                                </tr>
-                                                            ))}
-                                                        </tbody>
                                                     </table>
                                                 </div>
 

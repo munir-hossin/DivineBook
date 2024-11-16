@@ -13,6 +13,9 @@ import BookModal from "../bookmodal/BookModal";
 import LeftRightModalsBtn from "../sidebar/LeftRightModalsBtn";
 import sortedBooksReducer from "../reducer/sortedBooksreducer";
 
+console.log(initialBookData().image);
+
+
 
 
 function Components() {
@@ -126,7 +129,14 @@ function Components() {
         setCartItems(cartItems.filter((item) => item.id !== id));
     };
 
+
+
+    const bookData = initialBookData();
+    const images = bookData.map((book) => book.image);
+    
+    
     return (
+  
         <>
 
          <div>
@@ -134,7 +144,8 @@ function Components() {
                 openModal={openModal}
                 isModalOpen={isModalOpen}
                 cartItems={cartItems}
-                GetImages={GetImages}
+                GetImages={images}
+                // images={images}
                 closeModal={closeModal}
                 handleDecrement={handleDecrement}
                 handleIncrement={handleIncrement}
@@ -174,8 +185,8 @@ function Components() {
                       
                       <LeftRightModalsBtn toggleModal={toggleModal} toggleLeftModal={toggleLeftModal} />
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {/* Search Modal ******/}
+                        {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+               
                             <SearchModal
                                 isSearchModalOpen={isSearchModalOpen}
                                 setIsSearchModalOpen={setIsSearchModalOpen}
@@ -186,14 +197,14 @@ function Components() {
                                 GetImages={GetImages}
                             />
 
-                            {/* Book modal */}
+                          
                             <BookModal
                                 isBookModalOpen={isBookModalOpen}
                                 selectedBook={selectedBook}                             
                                 handleAddToCart={handleAddToCart}
                                 selectItems={selectItems}
                                 GetImages={GetImages}
-                           
+            
                                 setIsBookModalOpen={setIsBookModalOpen}
                                 handleHeartClick={handleHeartClick}
                             />
@@ -201,7 +212,49 @@ function Components() {
                             {sortedBooks.map((gallery) => (
                                 <GalleryItem onOpen={() => onOpenBookModal(gallery)} onAdd={handleAddToCart} key={gallery.id} gallery={gallery} handleHeartClick={handleHeartClick} selectItems={selectItems} sortedBooks={sortedBooks} />
                             ))}
-                        </div>
+
+
+                        </div> */}
+
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {/* Search Modal */}
+    <SearchModal
+        isSearchModalOpen={isSearchModalOpen}
+        setIsSearchModalOpen={setIsSearchModalOpen}
+        handleSearchChange={handleSearchChange}
+        searchResults={searchResults}
+        setSelectedBook={setSelectedBook}
+        setIsBookModalOpen={setIsBookModalOpen}
+        GetImages={selectedBook?.image} // Pass selectedBook image to SearchModal
+    />
+
+    {/* Book Modal */}
+    <BookModal
+        isBookModalOpen={isBookModalOpen}
+        selectedBook={selectedBook}
+        handleAddToCart={handleAddToCart}
+        selectItems={selectItems}
+        GetImages={selectedBook?.image} // Pass selectedBook image to BookModal
+        setIsBookModalOpen={setIsBookModalOpen}
+        handleHeartClick={handleHeartClick}
+    />
+
+    {sortedBooks.map((gallery) => (
+        <GalleryItem
+            key={gallery.id}
+            gallery={gallery}
+            onOpen={() => onOpenBookModal(gallery)}
+            onAdd={handleAddToCart}
+            handleHeartClick={handleHeartClick}
+            imageLink={gallery.image} // Send image link to GalleryItem
+            selectItems={selectItems}
+            sortedBooks={sortedBooks}
+        />
+    ))}
+</div>
+
+
+
                     </main>
 
                     {/* RightSidebar */}
