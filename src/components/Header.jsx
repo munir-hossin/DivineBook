@@ -5,27 +5,27 @@ import { MdDarkMode } from "react-icons/md";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 
-function Header({ openModal, isModalOpen, cartItems, GetImages, closeModal, handleDecrement, handleIncrement, handleDelete, totalItems, totalPrice, }) {
+function Header({ openModal, isModalOpen, cartItems, closeModal, handleDecrement, handleIncrement, handleDelete, totalItems, totalPrice, }) {
 
-   
-  
-    
 
-     // Check local storage and set the theme on initial load
-     const [theme, setTheme] = useState(localStorage.getItem("themeMode") || "light");
 
-     // Update the document class and localStorage whenever theme changes
-     useEffect(() => {
-         if (theme === "dark") {
-             document.documentElement.classList.add("dark");
-         } else {
-             document.documentElement.classList.remove("dark");
-         }
- 
-         localStorage.setItem("themeMode", theme);
-     }, [theme]);
 
-      // Handle the theme toggle
+
+    // Check local storage and set the theme on initial load
+    const [theme, setTheme] = useState(localStorage.getItem("themeMode") || "light");
+
+    // Update the document class and localStorage whenever theme changes
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+
+        localStorage.setItem("themeMode", theme);
+    }, [theme]);
+
+    // Handle the theme toggle
     const themeHandler = () => {
         setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
     };
@@ -34,7 +34,7 @@ function Header({ openModal, isModalOpen, cartItems, GetImages, closeModal, hand
 
     return (
         <>
-          <div className="flex px-4 h-20 items-center border-b">
+            <div className="flex px-4 h-20 items-center border-b">
                 <div className="text-xl text-red-400 dark:text-green-400">
                     <p className="font-bold">DivineBook</p>
                 </div>
@@ -44,7 +44,7 @@ function Header({ openModal, isModalOpen, cartItems, GetImages, closeModal, hand
                         <FaBell className="text-red-400 dark:text-green-400 mx-auto text-base" />
                     </div>
                     <div className="ml-4 border border-red-400 hover:bg-red-400 hover:bg-opacity-25 rounded dark:border-green-400 dark:hover:bg-green-400 dark:hover:bg-opacity-25 p-3 cursor-pointer">
-                       
+
 
                         {theme === "dark" ? <MdDarkMode onClick={themeHandler} className="text-xl text-green-400 cursor-pointer" /> : <IoIosSunny onClick={themeHandler} className="text-xl text-red-400 cursor-pointer" />}
                     </div>
@@ -53,13 +53,13 @@ function Header({ openModal, isModalOpen, cartItems, GetImages, closeModal, hand
                         <div onClick={openModal} className="cursor-pointer ml-4 border border-red-400 hover:bg-red-400 hover:bg-opacity-25 rounded dark:border-green-400 dark:hover:bg-green-400 dark:hover:bg-opacity-25 p-3 relative">
                             <FaCartArrowDown className=" text-red-400 dark:text-green-400 mx-auto text-base" />
 
-                           
+
                             <span className="absolute top-1 right-1 bg-red-400 dark:bg-green-400 text-white rounded-full text-xs px-1">{totalItems}</span>
                             {/* Modal */}
                         </div>
 
                         {isModalOpen && (
-                            <div className="fixed inset-0 flex items-center justify-center  bg-opacity-50 z-50">
+                            <div className="fixed inset-0 bg-gray-700 bg-opacity-25 flex items-center justify-center z-50">
                                 <dialog className="modal" open>
                                     <div className="w-8/12 ">
                                         {/* <div className=" w-8/12 "> */}
@@ -85,41 +85,41 @@ function Header({ openModal, isModalOpen, cartItems, GetImages, closeModal, hand
                                                         </thead>
                                                         {/* <!-- Row 1 --> */}
                                                         <tbody>
-    {cartItems.map((item) => (
-        <tr key={item.id} className="border-t border-gray-600">
-            <td className="flex items-center py-4">
-                {/* Set up the image dynamically */}
-                <img
-                    src={item.image}
-                    alt={item.name}
-                    className="h-14 mr-2"
-                />
-                <div>
-                    <p className="font-medium">{item.name}</p>
-                    <p className="text-gray-400 text-sm">{item.author}</p>
-                </div>
-            </td>
-            <td className="py-4">${item.price}</td>
-            <td className="py-4">
-                <div className="flex items-center bg-gray-700 mx-7 px-auto rounded-3xl">
-                    <button onClick={() => handleDecrement(item.id)} className="px-2 rounded">
-                        -
-                    </button>
-                    <span className="px-4">{item.quantity}</span>
-                    <button onClick={() => handleIncrement(item.id)} className="px-2 rounded">
-                        +
-                    </button>
-                </div>
-            </td>
-            <td className="py-4">${item.price * item.quantity}</td>
-            <td className="py-4">
-                <button onClick={() => handleDelete(item.id)} className="text-red-500">
-                    🗑️
-                </button>
-            </td>
-        </tr>
-    ))}
-</tbody>
+                                                            {cartItems.map((item) => (
+                                                                <tr key={item.id} className="border-t border-gray-600">
+                                                                    <td className="flex items-center py-4">
+                                                                        {/* Set up the image dynamically */}
+                                                                        <img
+                                                                            src={item.image}
+                                                                            alt={item.name}
+                                                                            className="h-14 mr-2"
+                                                                        />
+                                                                        <div>
+                                                                            <p className="font-medium">{item.name}</p>
+                                                                            <p className="text-gray-400 text-sm">{item.author}</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td className="py-4">${item.price}</td>
+                                                                    <td className="py-4">
+                                                                        <div className="flex items-center bg-gray-700 mx-7 px-auto rounded-3xl">
+                                                                            <button onClick={() => handleDecrement(item.id)} className="px-2 rounded">
+                                                                                -
+                                                                            </button>
+                                                                            <span className="px-4">{item.quantity}</span>
+                                                                            <button onClick={() => handleIncrement(item.id)} className="px-2 rounded">
+                                                                                +
+                                                                            </button>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td className="py-4">${item.price * item.quantity}</td>
+                                                                    <td className="py-4">
+                                                                        <button onClick={() => handleDelete(item.id)} className="text-red-500">
+                                                                            🗑️
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                            ))}
+                                                        </tbody>
 
                                                     </table>
                                                 </div>
@@ -153,7 +153,7 @@ function Header({ openModal, isModalOpen, cartItems, GetImages, closeModal, hand
                         )}
                     </div>
                 </div>
-            </div>   
+            </div>
         </>
     );
 }

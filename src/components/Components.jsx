@@ -225,7 +225,7 @@ function Components() {
         searchResults={searchResults}
         setSelectedBook={setSelectedBook}
         setIsBookModalOpen={setIsBookModalOpen}
-        GetImages={selectedBook?.image} // Pass selectedBook image to SearchModal
+        // GetImages={selectedBook?.image} // Pass selectedBook image to SearchModal
     />
 
     {/* Book Modal */}

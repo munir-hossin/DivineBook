@@ -7,7 +7,7 @@ function SearchModal({isSearchModalOpen, setIsSearchModalOpen, handleSearchChang
         <>
          {isSearchModalOpen && (
             <div
-                className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 "
+                className="fixed inset-0 bg-gray-700 bg-opacity-25 flex items-center justify-center z-50 "
                 onClick={() => setIsSearchModalOpen(false)} // Close modal when clicking outside
             >
                 {/* Modal itself */}
