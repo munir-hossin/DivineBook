@@ -3,78 +3,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import { TiStar } from "react-icons/ti";
 import { GoHeart, GoHeartFill } from "react-icons/go";
-
-     
-
-
-
 
 function GalleryItem({ onOpen, gallery, onAdd, handleHeartClick, selectItems}) {
 
