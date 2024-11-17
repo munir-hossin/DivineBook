@@ -8,9 +8,15 @@ function App() {
   
     return (
         <div>
-         <Components/>
+
+      
+        <Components/>
+    
         </div>
-  
+
+
+
+        
     );
 }
 
