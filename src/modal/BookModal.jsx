@@ -6,7 +6,7 @@
 import { GoHeart, GoHeartFill } from "react-icons/go";
 
 function BookModal({ isBookModalOpen, selectedBook, handleAddToCart, selectItems, setIsBookModalOpen, handleHeartClick, cartItems }) {
-    // Check if selectedBook is valid before accessing its properties
+    
     const isAlreadyAdded = selectedBook && cartItems.some((item) => item.id === selectedBook.id);
 
     const handleOverlayClick = () => {
@@ -38,7 +38,7 @@ function BookModal({ isBookModalOpen, selectedBook, handleAddToCart, selectItems
                                 <div className="w-full lg:w-[67%] px-3 py-4 md:py-6 md:space-y-4 order-2 lg:order-1 text-center md:text-start">
                                     <h2 className="text-2xl md:text-3xl font-bold mb-2">{selectedBook.name || 'Unknown Title'}</h2>
                                     <span className="block mb-2">{selectedBook.author}</span>
-                                    {/* <span className="block mb-2">{selectedBook.genre || 'No Genre'}</span> */}
+                    
                                     <p className="text-sm md:text-base mb-4">{selectedBook.description || 'No description available.'}</p>
 
                                     {/* Button Area */}
@@ -79,6 +79,21 @@ function BookModal({ isBookModalOpen, selectedBook, handleAddToCart, selectItems
 }
 
 export default BookModal;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // import { GoHeart, GoHeartFill } from "react-icons/go";
 // import { useState } from "react";
@@ -188,7 +203,7 @@ export default BookModal;
 //     );
 // }
 
-// export default BookModal;
+// export default BookModal; 
 
 
 

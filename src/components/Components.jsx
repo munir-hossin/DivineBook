@@ -48,7 +48,6 @@ function Components() {
 
 
     /**************  Function for Right side bar to toggle modal visibility */
-
     const [isRightModalOpen, setIsRightModalOpen] = useState(false);
 
     const toggleModal = () => {
