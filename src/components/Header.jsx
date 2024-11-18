@@ -81,14 +81,14 @@ function Header({ openModal, isModalOpen, cartItems, closeModal, handleDecrement
                         open
                     >
                         <div className="w-full">
-                            <div className="bg-gray-900 text-white w-[92%] rounded-[10px] pb-3 pt-1 px-4  lg:h-[440px] md:h-auto">
+                            <div className="bg-gray-900 text-white w-[92%] rounded-[10px] lg:pb-3 pt-1 px-4 h-[350px]  lg:h-[440px] md:h-auto">
                                 <div className="modal-action">
                                     <RiCloseLargeFill className="text-white text-2xl cursor-pointer" onClick={closeModal} />
                                 </div>
                                 <h2 className="text-xl font-bold text-center mb-4">Your Carts</h2>
 
                                 {/* Table Section */}
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mr-7">
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 mr-7">
                                     {/* Left Table Section */}
                                     <div className="md:col-span-2 h-[250px] md:h-[350px] overflow-y-scroll no-scrollbar">
                                         <table className="w-full text-left">
@@ -141,7 +141,7 @@ function Header({ openModal, isModalOpen, cartItems, closeModal, handleDecrement
 
                                     {/* Right Order Summary Section */}
                                     <div>
-                                        <div className="md:bg-[#8C8C8C4D] bg-gray-800 w-full md:w-[200px] mx-auto md:mx-7 text-center rounded-sm mt-4 md:mt-11">
+                                        <div className="md:bg-[#8C8C8C4D] bg-gray-800 w-full md:w-[200px] mx-auto md:mx-7 text-center rounded-sm md:mt-11">
                                             <h3 className="font-bold text-lg mb-4 text-gray-300 pt-3 border-b pb-5">Order Summary</h3>
                                             <div className="text-gray-300 mb-2 mx-6">
                                                 <p className="flex justify-between">

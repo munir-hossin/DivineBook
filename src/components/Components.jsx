@@ -188,10 +188,13 @@ function Components({ selectedHeartItems = [] }) {
                             <BookModal 
                             isBookModalOpen={isBookModalOpen} 
                             selectedBook={selectedBook} 
-                            handleAddToCart={selectItems} 
+                            // handleAddToCart={selectItems} 
                             selectItems={selectItems} 
                             handleHeartClick={handleHeartClick} 
                             setIsBookModalOpen={setIsBookModalOpen}
+                            cartItems={cartItems}
+                            handleAddToCart={handleAddToCart}
+                          
                             
                              />
 
@@ -207,6 +210,7 @@ function Components({ selectedHeartItems = [] }) {
                                 gallery={gallery} 
                                 handleHeartClick={handleHeartClick} 
                                 selectItems={selectItems}
+                                cartItems={cartItems}
                                 
                                 />
                             ))}
