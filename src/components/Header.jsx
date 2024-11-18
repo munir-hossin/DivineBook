@@ -157,7 +157,7 @@ function Header({ openModal, isModalOpen, cartItems, closeModal, handleDecrement
             {showOrderModal && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div className="bg-white p-6 lg:p-32 rounded shadow-lg text-center">
-                        <p className="text-lg font-semibold">{orderMessage}</p>
+                        <p className="text-lg font-semibold text-red-400 ">{orderMessage}</p>
                         <button onClick={() => setShowOrderModal(false)} className="mt-4 lg:mt-11 bg-green-500 text-white px-4 py-2 rounded">Close</button>
                     </div>
                 </div>
