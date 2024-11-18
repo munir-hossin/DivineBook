@@ -76,12 +76,11 @@ function Header({ openModal, isModalOpen, cartItems, closeModal, handleDecrement
                                             <div className="modal-action">
                                                 <RiCloseLargeFill className="text-white text-2xl cursor-pointer" onClick={closeModal} />
                                             </div>
-                                            <h2 className="text-xl font-bold text-center mb-4">Your Carts</h2>
+                                            <h2 className="text-xl font-bold text-center mb-[12px] lg:mb-4">Your Carts</h2>
 
                                             {/* Table Section */}
                                             <div className="grid grid-cols-1 md:grid-cols-3 gap-2  md:gap-4 mr-7">
-                                                {/* Left Table Section */}
-                                                <div className="md:col-span-2 h-[250px] md:h-[350px] overflow-y-scroll no-scrollbar">
+                                                <div className="md:col-span-2 h-[250px] md:h-[350px] overflow-y-scroll scrollbar-hide">
                                                     <table className="w-full text-left">
                                                         <thead>
                                                             <tr className="text-gray-400 uppercase text-sm">
@@ -92,7 +91,7 @@ function Header({ openModal, isModalOpen, cartItems, closeModal, handleDecrement
                                                                 <th className="py-2"></th>
                                                             </tr>
                                                         </thead>
-                                                        <tbody>
+                                                        <tbody className="overflow-x-scroll">
                                                             {cartItems.map((item) => (
                                                                 <tr key={item.id} className="border-t border-gray-600">
                                                                     <td className="flex items-center py-4">

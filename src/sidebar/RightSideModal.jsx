@@ -27,7 +27,7 @@ function RightSideModal({ handleSortByName, sortByPrice, sortByRating, toggleMod
                 aria-modal="true"
             >
                 <button
-                    className="mb-4 absolute top-8 bg-gray-300 rounded-full px-2 py-1 text-xs right-4"
+                    className="mb-4 absolute  top-8 bg-gray-100 dark:bg-opacity-15 rounded-full px-2 py-1 text-xs right-4"
                     onClick={toggleModal}
                     autoFocus
                 >
@@ -36,7 +36,7 @@ function RightSideModal({ handleSortByName, sortByPrice, sortByRating, toggleMod
                 <h2 className="text-xl font-bold mb-3 mt-3">Filter On Page</h2>
                 <div className="space-y-2">
                     <div
-                        className="flex cursor-pointer items-center py-1 px-4 rounded border-r-2 border-transparent hover:text-red-400 hover:border-gray-300 dark:hover:bg-green-400"
+                        className="flex cursor-pointer items-center py-1 px-4 rounded border-r-2 dark:border-none border-transparent hover:text-red-400 hover:border-gray-300 dark:hover:bg-green-400"
                         onClick={() => {
                             handleSortByName();
                             toggleModal();
@@ -52,7 +52,7 @@ function RightSideModal({ handleSortByName, sortByPrice, sortByRating, toggleMod
                     </div>
 
                     <div
-                        className="flex cursor-pointer items-center py-1 px-4 rounded border-r-2 border-transparent hover:text-red-400 hover:border-gray-300 dark:hover:bg-green-400"
+                        className="flex cursor-pointer items-center py-1 px-4 rounded border-r-2 dark:border-none border-transparent hover:text-red-400 hover:border-gray-300 dark:hover:bg-green-400"
                         onClick={() => {
                             sortByPrice();
                             toggleModal();
@@ -68,7 +68,7 @@ function RightSideModal({ handleSortByName, sortByPrice, sortByRating, toggleMod
                     </div>
 
                     <div
-                        className="flex cursor-pointer items-center py-1 px-4 rounded border-r-2 border-transparent hover:text-red-400 hover:border-gray-300 dark:hover:bg-green-400"
+                        className="flex cursor-pointer items-center py-1 px-4 rounded border-r-2 dark:border-none border-transparent hover:text-red-400 hover:border-gray-300 dark:hover:bg-green-400"
                         onClick={() => {
                             sortByRating();
                             toggleModal();
