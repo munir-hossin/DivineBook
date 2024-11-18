@@ -50,7 +50,8 @@ function Header({ openModal, isModalOpen, cartItems, closeModal, handleDecrement
 
     return (
         <>
-            <div  className="flex px-4 h-20 items-center border-b dark:border-b-gray-600">
+          
+            <div  className="flex  px-4 h-20 items-center border-b dark:border-b-gray-600">
                 <div className="text-xl text-red-400 dark:text-green-400">
                     <a href="#" className="font-bold">DivineBook</a>
                 </div>

@@ -1,4 +1,3 @@
-// ********************this is main copy *********************
 import { useEffect, useState } from "react";
 import GalleryItem from "./GalleryItem";
 import Footer from "./Footer";
@@ -10,7 +9,6 @@ import RightSidebar from "../sidebar/RightSidebar";
 import BookModal from "../modal/BookModal";
 import LeftRightModalBtn from "../buttons/LeftRightModalBtn";
 
-
 function Components() {
     const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
     const [isBookModalOpen, setIsBookModalOpen] = useState(false);
@@ -18,9 +16,15 @@ function Components() {
     const [sortedBooks, setSortedBooks] = useState(initialBookData());
     const [searchResults, setSearchResults] = useState([]);
     const [selectItems, setselectItems] = useState([]);
-
-    // for Left Side ber
     const [isLeftModalOpen, setIsLeftModalOpen] = useState(false);
+    const [cartItems, setCartItems] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
+    const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
     useEffect(() => {
         if (isLeftModalOpen) {
@@ -34,18 +38,6 @@ function Components() {
     const toggleLeftModal = () => {
         setIsLeftModalOpen(!isLeftModalOpen);
     };
-
-    // this is for header
-    const [cartItems, setCartItems] = useState([]);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
-
-    const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-    const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
-
 
     /**************  Function for Right side bar to toggle modal visibility */
     const [isRightModalOpen, setIsRightModalOpen] = useState(false);
@@ -83,7 +75,7 @@ function Components() {
         setSortedBooks(filtered);
     };
 
-    // Handle Sorting
+    // // Handle Sorting
     const handleSortByName = () => {
         const sorted = [...sortedBooks].sort((a, b) => a.name.localeCompare(b.name));
         setSortedBooks(sorted);
@@ -116,10 +108,8 @@ function Components() {
             quantity: 1,
         };
 
-        // Check if the item already exists in the cart
         const itemExists = cartItems.find((item) => item.id === gallery.id);
         if (!itemExists) {
-            // Add the new item to the cart
             setCartItems([...cartItems, newData]);
         }
     };
@@ -140,8 +130,6 @@ function Components() {
 
     return (
         <>
-            {/* This is for Header */}
-
             <Header
                 openModal={openModal}
                 isModalOpen={isModalOpen}
@@ -183,33 +171,19 @@ function Components() {
                                 setIsBookModalOpen={setIsBookModalOpen}
                             />
 
-                            <BookModal 
-                            isBookModalOpen={isBookModalOpen} 
-                            selectedBook={selectedBook} 
-                            // handleAddToCart={selectItems} 
-                            selectItems={selectItems} 
-                            handleHeartClick={handleHeartClick} 
-                            setIsBookModalOpen={setIsBookModalOpen}
-                            cartItems={cartItems}
-                            handleAddToCart={handleAddToCart}
-                          
-                            
-                             />
-
+                            <BookModal
+                                isBookModalOpen={isBookModalOpen}
+                                selectedBook={selectedBook}
+                                selectItems={selectItems}
+                                handleHeartClick={handleHeartClick}
+                                setIsBookModalOpen={setIsBookModalOpen}
+                                cartItems={cartItems}
+                                handleAddToCart={handleAddToCart}
+                            />
 
                             {sortedBooks.map((gallery) => (
-                                <GalleryItem 
-                                onOpen={() => onOpenBookModal(gallery)} 
-                                onAdd={handleAddToCart} 
-                                key={gallery.id} 
-                                gallery={gallery} 
-                                handleHeartClick={handleHeartClick} 
-                                selectItems={selectItems}
-                                cartItems={cartItems}
-                                
-                                />
+                                <GalleryItem onOpen={() => onOpenBookModal(gallery)} onAdd={handleAddToCart} key={gallery.id} gallery={gallery} handleHeartClick={handleHeartClick} selectItems={selectItems} cartItems={cartItems} />
                             ))}
-    
                         </div>
                     </main>
 
@@ -223,6 +197,17 @@ function Components() {
 }
 
 export default Components;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
