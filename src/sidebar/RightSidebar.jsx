@@ -72,13 +72,6 @@ export default RightSidebar;
 
 
 
-
-
-
-
-
-
-
 // import { FaChevronRight } from "react-icons/fa6";
 
 
